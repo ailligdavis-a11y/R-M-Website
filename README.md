@@ -1,17 +1,17 @@
 # R & M Outdoor Services
 
-Static website for R & M Outdoor Services in Fairbanks and North Pole, Alaska.
+Next.js App Router website for R & M Outdoor Services in Fairbanks and North Pole, Alaska.
 
-## Vercel deployment
+## Development
 
-Connect `ailligdavis-a11y/R-M-Website` in Vercel and use `main` as the production branch. Leave the root directory at the repository root. The checked-in `vercel.json` selects the Other framework, skips the build step, and serves `dist`.
+Use Node.js 20.9 or newer. Run `npm ci`, then `npm run dev`.
 
-Pushes to `main` trigger production deployments after the GitHub connection is configured.
+The homepage is in `app/page.jsx`, shared styles in `app/globals.css`, and metadata in `app/layout.jsx`. Photos and the logo are in `public/`.
 
-## Editing
+The quote form prepares an email using the visitor’s email app; it does not send or store submissions on a server.
 
-Edit `dist/index.html` and the image assets in `dist/`. The quote form prepares an email using the visitor’s email app; it does not send or store submissions on a server.
+## Deployment
 
-## Local preview
+Run `npm run build` to verify production compilation. Connect `ailligdavis-a11y/R-M-Website` to Vercel with `main` as the production branch and the root directory set to the repository root. `vercel.json` selects Next.js, `npm run build`, and `.next` output.
 
-Run `python3 -m http.server 4317 --directory dist` and visit http://localhost:4317.
+Pushes to `main` trigger deployments once the Vercel GitHub connection is configured.
